@@ -1,0 +1,64 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.geekbrains.MainController">
+    <MenuBar prefHeight="28.0" prefWidth="580.0" VBox.vgrow="NEVER" style="-fx-font-family:'Apple Symbols';">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem mnemonicParsing="false" text="Quit" />
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Rename" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="373.0" prefWidth="630.0" VBox.vgrow="ALWAYS">
+            <ListView fx:id="serverView" layoutX="387.0" layoutY="35.0" prefHeight="290.0" prefWidth="233.0" style="-fx-font-family:'Apple Symbols';" />
+            <Button layoutX="269.0" layoutY="93.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="109.0" text="&gt;" onAction="#sendFileToServer"> <!-- кнопка (>) -->
+               <font>
+                  <Font name="Apple Symbols" size="24.0" />
+               </font>
+            </Button>
+            <Button layoutX="269.0" layoutY="186.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="109.0" text="&lt;" onAction="#sendFileFromServer"> <!-- кнопка (<) -->
+               <font>
+                  <Font name="Apple Symbols" size="24.0" />
+               </font>
+            </Button>
+            <TextField fx:id="input" layoutX="29.0" layoutY="334.0" onAction="#sendMessage" prefHeight="26.0" prefWidth="592.0">
+         <font>
+            <Font name="Apple Symbols" size="13.0" />
+         </font></TextField>
+            <TextField fx:id="TextFieldLeft" layoutX="29.0" layoutY="9.0" prefHeight="26.0" prefWidth="233.0">
+         <font>
+            <Font name="Apple Symbols" size="13.0" />
+         </font></TextField>
+            <TextField fx:id="TextFieldRight" layoutX="387.0" layoutY="9.0" prefHeight="26.0" prefWidth="233.0">
+         <font>
+            <Font name="Apple Symbols" size="13.0" />
+         </font></TextField>
+            <Button layoutX="236.0" layoutY="10.0" mnemonicParsing="false" text="..." onAction="#sendClearLeft"> <!-- кнопка (...) -->
+         <font>
+            <Font name="Apple Symbols" size="13.0" />
+         </font></Button>
+            <Button layoutX="594.0" layoutY="9.0" mnemonicParsing="false" text="..." onAction="#sendClearRight"> <!-- кнопка (...) -->
+         <font>
+            <Font name="Apple Symbols" size="13.0" />
+         </font></Button>
+            <ListView fx:id="clientView" layoutX="29.0" layoutY="35.0" prefHeight="290.0" prefWidth="233.0" style="-fx-font-family:'Apple Symbols';"/>
+    </AnchorPane>
+</VBox>
